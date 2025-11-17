@@ -1,8 +1,16 @@
-# C Calculator WASM Library
+# Math Function Library
 
-A C library for the web providing mathematical operations.
+A math function library for various programming languages. The primary target is WebAssembly, everything else is secondary and may not be stable. Use at your own risk.
 
 **Note:** This library is not yet in a stable state. Exponent function cannot calculate with decimals powers (which results in root function not working yet either)
+
+## Supported Languages
+
+- C
+- C++
+- WebAssembly
+  - JavaScript (with proper `.wasm` import)
+  - TypeScript (with proper `.wasm` import)
 
 ## Supported Operations
 
@@ -46,7 +54,7 @@ The following functions are provided:
 
 ## Building
 
-### `calculator.c`
+### `mathfun.c`
 
 [Emscripten](https://emscripten.org/) is required to compile this project to WebAssembly.
 
@@ -57,10 +65,10 @@ Run either of the following commands to compile `calculator.c` to `calculator.wa
 make
 
 # Build Command:
-emcc -Os calculator.c -o calculator.wasm --no-entry
+emcc -Os mathfun.c -o mathfun.wasm --no-entry
 ```
 
-### `calculator.wat`
+### `mathfun.wat`
 
 This file is generated from a compiled version of calculator.wasm. It is provided so anyone can compile the .wasm file from it without the need for emscripten.
 
